@@ -1,0 +1,2 @@
+# Browser Lie-detector with Modernizr
+The fantastic Modernizr library can only detect whether a browser 'supports' an html5 input type, not whether it has an implemented widget. For example, a browser could recognize `<input type="date">` as a date input, but still render it as a regular text field. This page just lets you test how accurate your modernizr tests are going to be for input types. So open it up in all your Android/WP7/8/iOS devices, take a look at whether native input widgets are supported, and check that it matches with the Modernizr output. 

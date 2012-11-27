@@ -1,0 +1,48 @@
+body {
+  font-family: "Helvetica", Arial, sans-serif;
+}
+
+p {
+  margin-bottom: 15px;
+  padding: 8px;
+}
+
+.container {
+ width: 50%;
+ margin: 0 auto;
+}
+
+p label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.support {
+  margin-top: 5px;
+  font-family: Courier, monospace;
+  display:block;
+}
+
+.true {
+  background: #DFF0D8;
+  color:#468847;
+
+}
+
+.false {
+  background: #F2DEDE;
+  color:#B94A48;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 764px) {
+  .container {
+    width: 90%;
+  }
+}

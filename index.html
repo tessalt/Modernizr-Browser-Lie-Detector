@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Hello Modernizr</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="modernizr.js"></script>
+
+</head>
+<body>
+<div class="container">
+<h1>Browser Lie Detector</h1>
+<p id="search">
+  <label>search <span></span></label>
+  <input type="search">
+</P>
+<p id="tel">
+  <label>tel <span></span></label>
+  <input type="tel">
+</P>
+<p id="url">
+  <label>url <span></span></label>
+  <input type="url">
+</P>
+<p id="email">
+  <label>email <span></span></label>
+  <input type="email">
+</P>
+<p id="datetime">
+  <label>datetime <span></span></label>
+  <input type="datetime">
+</P>
+<p id="date">
+  <label>date <span></span></label>
+  <input type="date">
+</P>
+<p id="month">
+  <label>month <span></span></label>
+  <input type="month">
+</P>
+<p id="week">
+  <label>week <span></span></label>
+  <input type="week">
+</P>
+<p id="time">
+  <label>time <span></span></label>
+  <input type="time">
+</P>
+<p id="datetime-local">
+  <label>datetime-local <span></span></label>
+  <input type="datetime-local">
+</P>
+<p id="number">
+  <label>number <span></span></label>
+  <input type="number">
+</P>
+<p id="range">
+  <label>range <span></span></label>
+  <input type="range">
+</P>
+<p id="color">
+  <label>color <span></span></label>
+  <input type="color">
+</P>
+</div>
+<script>
+
+  if (Modernizr.inputtypes) {
+    types = Modernizr.inputtypes;
+    console.log(types);
+    for (var key in types) {
+      if (types.hasOwnProperty(key)) {
+        var elem = "#" + key;
+        var status = types[key];
+        
+          var support = "<span class='support'>Modernizr.inputttypes."+  key + " = " + types[key] + "</span> ";
+        $(elem).addClass(status).append(support);
+      }
+    }
+  }
+</script>
+</body>
+</html>
