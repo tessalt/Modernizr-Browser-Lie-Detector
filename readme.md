@@ -18,6 +18,8 @@ The fantastic Modernizr library can only detect whether a browser 'supports' an 
   </tr>
   <tr>
     <td>Opera Mobile 12.1 on Android 2.3.3</td>
-    <td>All input types return true, but <code>tel</code>, <code>url</code>, and <code>email</code> are plain text boxes. Also note that while all date and time pickers as well as `range` are technically supported, implementation is godawful. Surprisingly, <code>color</code> works ok.</td>
+    <td>All input types return true, but <code>tel</code>, <code>url</code>, and <code>email</code> are plain text boxes. Also note that while all date and time pickers as well as <code>range</code> are technically supported, implementation is godawful. Surprisingly, <code>color</code> works ok.</td>
   </tr>
 </table>
+
+If you have some results to share, you can add them as an issue and I'll update the results table :) 
