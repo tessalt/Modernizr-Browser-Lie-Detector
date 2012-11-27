@@ -5,16 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Browser Lie Detector with Modernizr</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script src="modernizr.js"></script>
-
 </head>
 <body>
 <div class="container">
-<h1>Browser Lie Detector</h1>
-<h2>Cross-check what you see with what Modernizr says</h2>
-<p><a href="https://github.com/tessa-lt/Modernizr-Browser-Lie-Detector">And report your findings on GitHub</a></p>
-<p>
+<h1>Browser Input Type Support Lie Detector</h1>
+<h2>Cross-check what you see with what your browser tells Modernizr</h2>
+<a href="https://github.com/tessa-lt/Modernizr-Browser-Lie-Detector">And report your findings on GitHub</a>
+<h3>Your Browser:</h3>
 <p id="search">
   <label>search <span></span></label>
   <input type="search">
@@ -68,21 +65,26 @@
   <input type="color">
 </P>
 </div>
-<script>
 
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="modernizr.js"></script>
+<script src="ua-parser.js"></script>
+<script>
   if (Modernizr.inputtypes) {
     types = Modernizr.inputtypes;
-    console.log(types);
-    for (var key in types) {
-      if (types.hasOwnProperty(key)) {
-        var elem = "#" + key;
-        var status = types[key];
-        
-          var support = "<span class='support'>Modernizr.inputttypes."+  key + " = " + types[key] + "</span> ";
+    for (var type in types) {
+      if (types.hasOwnProperty(type)) {
+        var elem = "#" + type;
+        var support = "<span class='support'>Modernizr.inputttypes."+  type + " = " + types[type] + "</span> ";
+        var status = types[type].toString();
         $(elem).addClass(status).append(support);
       }
     }
   }
+  var parser = new UAParser();
+  var yourUa = parser.getResult().browser;
+  var report = "<h4>" + yourUa.name + " <small>" + yourUa.version + "</small></h4>";
+  $("h3").after(report);  
 </script>
 </body>
 </html>
