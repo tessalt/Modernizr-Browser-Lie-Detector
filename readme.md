@@ -14,6 +14,10 @@ The fantastic Modernizr library can only detect whether a browser 'supports' an 
   </tr>
   <tr>
     <td>Safari Mobile 6.0</td>
-    <td>Modernizr.inputtype.week returns true, but Safari renders plain text inpug</td>
+    <td>`Modernizr.inputtype.week` returns `true`, but Safari renders plain text input</td>
+  </tr>
+  <tr>
+    <td>Opera Mobile 12.1 on Android 2.3.3</td>
+    <td>All input types return true, but `tel`, `url`, and `email` are plain text boxes. Also note that while all date and time pickers as well as `range` are technically supported, implementation is godawful. Surprisingly, `color` works ok.</td>
   </tr>
 </table>
